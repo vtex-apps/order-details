@@ -1,0 +1,95 @@
+{
+  "pages": {
+    "getting-started": {
+      "path": "/getting-started",
+      "extensible": true
+    }
+  },
+  "extensions": {
+    "getting-started": {
+      "component": "index",
+      "props": {
+        "page": "getting-started/nested-a"
+      }
+    },
+    "getting-started/nested-a": {
+      "component": "nested",
+      "props": {
+        "page": "getting-started/nested-b"
+      }
+    },
+    "getting-started/nested-b": {
+      "component": "nested",
+      "props": {
+        "page": "getting-started/nested-param",
+        "targetParams": {
+          "slug": "myslug"
+        }
+      }
+    },
+    "getting-started/nested-param": {
+      "component": "nested",
+      "props": {
+        "page": "getting-started/nested-param/deeply-nested",
+        "targetParams": {
+          "slug": "myslug",
+          "deep": "second"
+        }
+      }
+    },
+    "getting-started/nested-param/deeply-nested": {
+      "component": "nested",
+      "props": {
+        "page": "getting-started/container"
+      }
+    },
+    "getting-started/container": {
+      "component": "vtex.render-runtime/ExtensionContainer"
+    },
+    "getting-started/container/first": {
+      "component": "nested",
+      "props": {
+        "page": "getting-started"
+      }
+    },
+    "getting-started/container/second": {
+      "component": "nested",
+      "props": {
+        "page": "getting-started/nested-a"
+      }
+    },
+    "getting-started/first-step": {
+      "component": "first"
+    },
+    "getting-started/second-step": {
+      "component": "second",
+      "async": true
+    },
+    "getting-started/configurable-component": {
+      "component": "configurable",
+      "props": {
+        "show": true,
+        "title": "This is a configurable component",
+        "text": "You can edit it yourself in the edit bar below."
+      }
+    },
+    "legacy-getting-started": {
+      "component": "index"
+    },
+    "legacy-getting-started/first-step": {
+      "component": "first"
+    },
+    "legacy-getting-started/second-step": {
+      "component": "second"
+    },
+    "legacy-without-tachyons": {
+      "component": "index"
+    },
+    "legacy-without-tachyons/first-step": {
+      "component": "first"
+    },
+    "legacy-without-tachyons/second-step": {
+      "component": "second"
+    }
+  }
+}
