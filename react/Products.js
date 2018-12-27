@@ -10,7 +10,7 @@ import Attachment from './Attachment'
 const { reduceBundleItems } = utils
 
 const Products = props => {
-  const { items, currencyCode, sellers } = props
+  const { items, currencyCode } = props
   const itemsWithBundleItems = reduceBundleItems(items)
   return (
     <table className="myo-product-table collapse table w-100 mt7">
@@ -32,9 +32,6 @@ const Products = props => {
       </thead>
       <tbody>
         {itemsWithBundleItems.map((product, index) => {
-          const seller = sellers.find(seller => seller.id === product.seller)
-          const sellerName = seller ? seller.name : ''
-
           if (product.isBundleItem) {
             return (
               <BundleItem
@@ -62,17 +59,7 @@ const Products = props => {
           return (
             <Product
               key={index}
-              sellerName={sellerName}
-              currencyCode={currencyCode}
-              name={product.name}
-              price={product.sellingPrice}
-              imageUrl={product.imageUrl}
-              detailUrl={product.detailUrl}
-              quantity={product.quantity}
-              measurementUnit={product.measurementUnit}
-              isGift={product.isGift}
-              trackingUrl={product.logisticsInfo.trackingUrl}
-              trackingNumber={product.logisticsInfo.trackingNumber}
+              productInfo={product}
             />
           )
         })}
