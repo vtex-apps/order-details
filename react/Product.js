@@ -5,18 +5,20 @@ import ProductImage from './ProductImage'
 import ProductPrice from './ProductPrice'
 
 const Product = ({ productInfo }) => (
-  <div className="flex justify-between mb items-center">
-    <ProductImage
-      url="http://recorrenciaqa.vteximg.com.br/arquivos/ids/155417-55-55/mambo.png?v=636093678308170000"
-      alt={productInfo.name}
-      className="w3"
-    />
-    <p href={productInfo.detailUrl} className="t-body" target="_blank">
-      {productInfo.name} <br />
-      <small className="t-small">
-        {productInfo.quantity} {productInfo.measurementUnit}
-      </small>
-    </p>
+  <div className="flex items-center justify-between">
+    <div className="flex items-center">
+      <ProductImage
+        url={productInfo.imageUrl}
+        alt={productInfo.name}
+        className="w3 mr5"
+      />
+      <p href={productInfo.detailUrl} className="t-body" target="_blank">
+        {productInfo.name} <br />
+        <small className="t-mini">
+          {productInfo.quantity} {productInfo.measurementUnit}
+        </small>
+      </p>
+    </div>
     <ProductPrice value={productInfo.price * productInfo.quantity} currency="BRL" />
   </div>
 )
