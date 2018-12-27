@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const PrettyAddress = ({
   address: {
-    receiverName,
     street,
     number,
     complement,
@@ -24,10 +23,7 @@ const PrettyAddress = ({
   }
 
   return (
-    <div className="f6">
-      <p className="lh-solid">
-        <strong>{receiverName}</strong>
-      </p>
+    <div className="t-body">
       <p className="lh-solid">
         {street}, {number}{complement ? ` - ${complement}` : null}
       </p>
@@ -36,7 +32,7 @@ const PrettyAddress = ({
         {city} - {state}
       </p>
       <p className="lh-solid">
-        {postalCode} - {country}
+        {postalCode} {country && `- ${country}`}
       </p>
     </div>
   )

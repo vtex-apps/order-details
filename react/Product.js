@@ -15,7 +15,10 @@ const Product = ({ productInfo }) => (
       <p href={productInfo.detailUrl} className="t-body" target="_blank">
         {productInfo.name} <br />
         <small className="t-mini">
-          {productInfo.quantity} {productInfo.measurementUnit}
+          {productInfo.quantity}
+          {productInfo.measurementUnit
+            ? productInfo.measurementUnit
+            : (productInfo.quantity > 1) ? ' unidades' : ' unidade' }
         </small>
       </p>
     </div>
