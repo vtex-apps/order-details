@@ -1,25 +1,19 @@
 {
   "vendor": "vtex",
   "name": "order-details",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "title": "Order Details Components",
   "description": "",
   "defaultLocale": "pt-BR",
   "builders": {
-    "pages": "0.x",
-    "react": "2.x",
+    "react": "3.x",
     "messages": "0.x"
   },
   "dependencies": {
-    "vtex.styleguide": "8.x",
-    "vtex.my-account-commons": "0.x"
+    "vtex.styleguide": "9.x",
+    "vtex.my-account-commons": "1.x"
   },
   "mustUpdateAt": "2019-12-19",
-  "categories": [],
-  "registries": [
-    "smartcheckout"
-  ],
-  "settingsSchema": {},
   "scripts": {
     "postreleasy": "vtex publish --verbose"
   }
