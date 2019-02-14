@@ -10,13 +10,14 @@ function ProductImage({ className, url, alt }) {
 
   const [maxWidth, setMaxWidth] = useState(50)
   const [maxHeight, setMaxHeight] = useState(50)
-  const [lastUrl, setLastUrl] = useState(url)
 
   const resizeHandler = (width, height) => {
-    if(width > maxWidth) setMaxWidth(width)
-    if(height > maxHeight) setMaxHeight(height)
-
-    return
+    if(width > maxWidth) {
+      setMaxWidth(width + 50)
+    }
+    if(height > maxHeight) {
+      setMaxHeight(height + 50)
+    }
   }
 
   return (
@@ -24,7 +25,7 @@ function ProductImage({ className, url, alt }) {
       <ReactResizeDetector handleWidth handleHeight onResize={(width, height) => resizeHandler(width, height)} />
       <img
         className={`${className}`}
-        src={fixImageUrl(lastUrl, maxWidth, maxHeight)}
+        src={fixImageUrl(url, maxWidth, maxHeight)}
         alt={alt}
       />
     </Fragment>
