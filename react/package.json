@@ -1,8 +1,9 @@
 {
-  "name": "vtex.render-getting-started",
+  "name": "vtex.order-details",
   "version": "0.0.0",
   "dependencies": {
     "lodash": "^4.17.11",
-    "react-intl": "^2.7.2"
+    "react-intl": "^2.7.2",
+    "react-resize-detector": "^3.4.0"
   }
 }
