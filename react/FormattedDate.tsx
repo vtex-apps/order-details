@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { FormattedDate } from 'react-intl'
 
-const CustomDate = ({ date, style = '' }) => {
+const CustomDate = ({ date, style = '' }: { date: string; style: string }) => {
   let settings
 
   switch (style.toLowerCase()) {
@@ -18,11 +17,6 @@ const CustomDate = ({ date, style = '' }) => {
   }
 
   return <FormattedDate value={date} {...settings} />
-}
-
-CustomDate.propTypes = {
-  date: PropTypes.any.isRequired,
-  style: PropTypes.string,
 }
 
 export default CustomDate
