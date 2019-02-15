@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import PaymentFlagsSprite from './images/payment-flags.png'
-import * as g from './constants/paymentGroups'
+import * as g from '../constants/paymentGroups'
 
 const PaymentFlagIcon = ({ type, size, group }) => {
   if (!type) {

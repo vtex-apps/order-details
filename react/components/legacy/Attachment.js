@@ -4,7 +4,7 @@ import map from 'lodash/map'
 import { FormattedMessage, FormattedDate } from 'react-intl'
 
 import arrow from './images/arrow-up.svg'
-import slugify from './utils/slugify'
+import slugify from '../utils/slugify'
 
 const ATTACHMENT_DATE_VALUES = [
   'vtex.subscription.key.validity.begin',
