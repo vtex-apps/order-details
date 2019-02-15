@@ -3,7 +3,7 @@ import React from 'react'
 import { FormattedMessage } from 'react-intl'
 import { utils } from 'vtex.my-account-commons'
 
-import Product from './Product'
+import Product from '../Product'
 import BundleItem from './BundleItem'
 import Attachment from './Attachment'
 

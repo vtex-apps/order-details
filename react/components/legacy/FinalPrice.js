@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Price from './FormattedPrice'
+import Price from '../FormattedPrice'
 
 const FinalPrice = props => {
   const { totals, currencyCode } = props
