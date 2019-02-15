@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 
-import Price from './FormattedPrice'
+import Price from '../FormattedPrice'
 
 const ProductPrice = ({ value, isGift, currency }) => {
   if (isGift) {

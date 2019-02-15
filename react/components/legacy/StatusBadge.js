@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
-import OrderUtils from './utils/OrderUtils'
+import OrderUtils from '../utils/OrderUtils'
 
 const StatusBadge = ({ state }) => {
   const { status } = OrderUtils.getFullState(state)
