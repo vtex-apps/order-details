@@ -1,1 +1,1 @@
-declare module "react-resize-detector"
+declare module 'react-resize-detector'
