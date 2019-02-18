@@ -6,7 +6,7 @@ import { utils } from 'vtex.my-account-commons'
 const { fixImageUrl } = utils
 
 interface Props {
-  className: string
+  className?: string
   url: string
   alt: string
 }
