@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Components from OrderPlaced
+- Configuration for TypeScript
+
+### Changed
+
+- Builder version for Messages
+
 ## [0.0.1-beta] - 2019-01-21
 
 ### Added
