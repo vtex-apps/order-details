@@ -9,7 +9,7 @@ interface Props {
 
 const ProductList: FunctionComponent<Props> = ({ products, currency }) => {
   return (
-    <div className="flex flex-column justify-between w-100 w-75-m">
+    <div className="flex flex-column justify-between w-75-m w-100">
       {products.map((product: OrderItem, index: number) => (
         <article
           className={`${

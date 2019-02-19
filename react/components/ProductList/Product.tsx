@@ -18,16 +18,14 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
     productInfo.unitMultiplier !== 1 || productInfo.measurementUnit !== 'un'
 
   return (
-    <div className="flex justify-between flex-column-s flex-row-m pv5">
+    <article className="flex justify-between flex-column-s flex-row-m pv6">
       <div className="flex items-center flex-column flex-row-m mr8-m">
-        <div className="mw4 mr5">
-          <ProductImage
-            url={productInfo.imageUrl}
-            alt={productInfo.name}
-            className="mr5"
-          />
-        </div>
-        <div className="flex flex-column items-between h-100">
+        <ProductImage
+          url={productInfo.imageUrl}
+          alt={productInfo.name}
+          className="w4 mr6-m"
+        />
+        <div className="flex flex-column items-between justify-between h-100">
           <a
             href={productInfo.detailUrl}
             className="t-body c-muted-1 no-underline"
@@ -45,7 +43,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
               )}
             </p>
           </a>
-          <p className="t-mini c-muted-1 tc tl-m">
+          <p className="t-mini c-muted-1 tc tl-m mb0">
             {intl.formatMessage(
               { id: 'products.quantity' },
               {
@@ -61,7 +59,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
           currency={currency}
         />
       </p>
-    </div>
+    </article>
   )
 }
 
