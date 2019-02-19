@@ -15,7 +15,7 @@ const StorePickUp: FunctionComponent<Props> = ({
   <Fragment>
     {pickUpPackages.map((pickup: Parcel, index: number) => (
       <section
-        className="mv8 flex justify-between flex-column flex-row-m"
+        className="mv8 flex-l justify-between flex-column flex-row-m"
         key={index}
       >
         <StorePickUpHeader
