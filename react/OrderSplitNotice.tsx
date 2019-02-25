@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { Alert } from 'vtex.styleguide'
 
-import { orderSplitMessage } from '../../utils'
+import { orderSplitMessage } from './utils'
 
 interface Props {
   deliveries: number
