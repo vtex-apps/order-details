@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 
+import AdditionalInfo from './AdditionalInfo'
 import ButtonLink from './ButtonLink'
-import AdditionalInfo from './components/Payment/AdditionalInfo'
 import Price from './FormattedPrice'
 import InfoIcon from './Icons/Info'
 
