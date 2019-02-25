@@ -8,10 +8,7 @@ interface Props {
 
 const Address: FunctionComponent<Props> = ({ address, pickup }) => {
   return (
-    <div
-      className="c-muted-1 mb5 mr10-m lh-copy"
-      data-testid="address-component"
-    >
+    <div className="c-muted-1 lh-copy" data-testid="address-component">
       {pickup && (
         <p className="c-on-base lh-copy">{pickup.pickupFriendlyName}</p>
       )}
