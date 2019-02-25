@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
-import Address from '../Address'
+import Address from '../../Address'
 
 interface Props {
   shippingData: Parcel
