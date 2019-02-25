@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
+
 import ButtonLink from '../../ButtonLink'
 
 interface Props {
