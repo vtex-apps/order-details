@@ -1,8 +1,9 @@
 import React, { FunctionComponent, ReactChild, ReactNode } from 'react'
+import { Link } from 'vtex.render-runtime'
 import { Button, ButtonWithIcon } from 'vtex.styleguide'
 
 interface Props {
-  url: string
+  to: string
   icon?: ReactNode
   fullWidth?: boolean
   openNewWindow?: boolean
@@ -11,14 +12,13 @@ interface Props {
 }
 
 const ButtonLink: FunctionComponent<Props> = ({
-  url,
+  to,
   icon,
   fullWidth,
-  openNewWindow,
   variation,
   children,
 }) => (
-  <a href={url} target={openNewWindow ? '_blank' : ''}>
+  <Link to={to} data-testid="button-link">
     {icon ? (
       <ButtonWithIcon icon={icon} variation={variation} block={fullWidth}>
         {children}
@@ -28,7 +28,7 @@ const ButtonLink: FunctionComponent<Props> = ({
         {children}
       </Button>
     )}
-  </a>
+  </Link>
 )
 
 export default ButtonLink
