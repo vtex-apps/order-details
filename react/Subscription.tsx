@@ -2,7 +2,7 @@ import React, { Fragment, FunctionComponent, useState } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
-import { getSubscriptionInfo } from '../../utils'
+import { getSubscriptionInfo } from './utils'
 
 const SubscriptionAttachment: FunctionComponent<
   { attachmentItem: Attachment } & InjectedIntlProps
