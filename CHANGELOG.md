@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Props expected by ProductImage component
+- Delete legacy components from MyOrders
+- Props expected by ButtonLink component
+
+### Fixed
+
+- CustomerInfo component did not take into account `document` not being present in every country
+- Typings for `render-runtime`
+
 ## [0.1.0] - 2019-02-21
 
 ### Added
