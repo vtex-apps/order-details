@@ -19,8 +19,12 @@ const CustomerInfo: FunctionComponent<Props & InjectedIntlProps> = ({
               {`${personalData.firstName.value} ${personalData.lastName.value}`}
             </li>
             <li className="pv2 c-muted-2">{personalData.email.value}</li>
-            <li className="pv2 c-muted-2">{personalData.document.value}</li>
-            <li className="pv2 c-muted-2">{profile.phone}</li>
+            {personalData.document && (
+              <li className="pv2 c-muted-2">{personalData.document.value}</li>
+            )}
+            {profile.phone && (
+              <li className="pv2 c-muted-2">{profile.phone}</li>
+            )}
           </ul>
         )}
       </ProfileSummary>
