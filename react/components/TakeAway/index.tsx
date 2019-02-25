@@ -13,10 +13,11 @@ const TakeAway: FunctionComponent<Props & InjectedIntlProps> = ({
   intl,
 }) => (
   <section className="mv8 flex flex-column justify-between">
-    <header>
-      <p data-testid="shipping-header" className="t-heading-4-ns t-heading-5">
-        {intl.formatMessage({ id: 'takeaway.header.title' })}
-      </p>
+    <header
+      data-testid="shipping-header"
+      className="t-heading-4-ns t-heading-5"
+    >
+      {intl.formatMessage({ id: 'takeaway.header.title' })}
     </header>
     <ProductList products={takeAwayPackages[0].items} currency={currency} />
   </section>
