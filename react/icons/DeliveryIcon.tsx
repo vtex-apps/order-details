@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+
 import { calcIconSize } from './utils'
 
 const iconBase = {
