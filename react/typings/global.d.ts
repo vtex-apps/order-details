@@ -58,7 +58,7 @@ interface OrderItem {
 }
 
 interface Bundle {
-  id
+  id: string
   attachments: Attachment[]
   name: string
   price: number
