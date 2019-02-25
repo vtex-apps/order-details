@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 
-import ProductImage from '../../ProductImage'
-import FormattedPrice from '../Payment/FormattedPrice'
+import FormattedPrice from './FormattedPrice'
+import ProductImage from './ProductImage'
 
 interface Props {
   productInfo: OrderItem

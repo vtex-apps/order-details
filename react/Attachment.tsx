@@ -2,10 +2,10 @@ import React, { Fragment, FunctionComponent, useState } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
-import ProductImage from '../../ProductImage'
-import { isSubscription } from '../../utils'
-import Price from '../Payment/FormattedPrice'
+import Price from './FormattedPrice'
+import ProductImage from './ProductImage'
 import Subscription from './Subscription'
+import { isSubscription } from './utils'
 
 interface Props {
   attachmentsInfo: Attachment[]

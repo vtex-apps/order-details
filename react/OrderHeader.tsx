@@ -8,7 +8,7 @@ import {
 import { compose } from 'recompose'
 import { RenderContextProps, withRuntimeContext } from 'vtex.render-runtime'
 
-import FormattedDate from '../../FormattedDate'
+import FormattedDate from './FormattedDate'
 import OrderOptions from './OrderOptions'
 
 interface Props {
@@ -25,7 +25,7 @@ const OrderHeader: FunctionComponent<
   const orderSeller = orderInfo.sellers[0].name
 
   return (
-    <header className="flex justify-between items-center mt7">
+    <header className="flex justify-between items-center">
       <p className="t-heading-3 lh-copy">
         {intl.formatMessage(
           { id: 'order.header.number' },
