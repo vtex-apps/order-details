@@ -36,7 +36,7 @@ const OrderHeader: FunctionComponent<
         <br />
         <small className="c-muted-2 t-body">
           <FormattedMessage
-            id={'order.header.date'}
+            id="order.header.date"
             values={{
               orderDate: (
                 <FormattedDate date={orderInfo.creationDate} style="short" />
@@ -49,7 +49,7 @@ const OrderHeader: FunctionComponent<
         {splitOrder && storeAccount !== orderSeller && (
           <small className="c-muted-2 t-body">
             <FormattedMessage
-              id={'order.header.seller'}
+              id="order.header.seller"
               values={{
                 seller: <span className="c-action-primary">{orderSeller}</span>,
               }}
