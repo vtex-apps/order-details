@@ -6,13 +6,17 @@ import { utils } from 'vtex.my-account-commons'
 const { fixImageUrl } = utils
 
 interface Props {
-  className?: string
+  imageProps?: {
+    width?: number;
+    height?: number;
+    className?: string;
+  }
   url: string
   alt: string
 }
 
 const ProductImage: FunctionComponent<Props> = ({
-  className,
+  imageProps,
   url,
   alt,
 }: Props) => {
@@ -38,9 +42,9 @@ const ProductImage: FunctionComponent<Props> = ({
         }
       />
       <img
-        className={`${className}`}
         src={fixImageUrl(url, maxWidth, maxHeight)}
         alt={alt}
+        {...imageProps}
       />
     </Fragment>
   )
