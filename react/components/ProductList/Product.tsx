@@ -23,7 +23,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
         <ProductImage
           url={productInfo.imageUrl}
           alt={productInfo.name}
-          className="w4 mr6-m"
+          imageProps={{ className: 'w4 mr6-m' }}
         />
         <div className="flex flex-column items-between justify-between h-100">
           <a
