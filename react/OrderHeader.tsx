@@ -13,14 +13,13 @@ import OrderOptions from './OrderOptions'
 
 interface Props {
   orderInfo: Order
-  splitOrder?: boolean
   takeaway?: boolean
   runtime?: { account: string }
 }
 
 const OrderHeader: FunctionComponent<
   Props & InjectedIntlProps & RenderContextProps
-> = ({ orderInfo, splitOrder, takeaway, intl, runtime }) => {
+> = ({ orderInfo, takeaway, intl, runtime }) => {
   const storeAccount = runtime.account
   const orderSeller = orderInfo.sellers[0].name
 
@@ -46,7 +45,7 @@ const OrderHeader: FunctionComponent<
           />
         </small>
         <br />
-        {splitOrder && storeAccount !== orderSeller && (
+        {storeAccount !== orderSeller && (
           <small className="c-muted-2 t-body">
             <FormattedMessage
               id="order.header.seller"

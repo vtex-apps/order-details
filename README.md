@@ -131,9 +131,7 @@ Component for rendering basic information on an order visualization, along with 
 ```typescript
 interface Props {
   orderInfo: Order;
-  splitOrder?: boolean;
   takeaway?: boolean;
-  runtime?: { account: string };
 }
 ```
 
