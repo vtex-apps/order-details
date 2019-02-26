@@ -135,6 +135,8 @@ interface Props {
 }
 ```
 
+Notice that the `takeaway` prop is a `boolean`, and should be set to true if this order has takeaway items (from InStore).
+
 ### OrderOptions
 
 Renders `ButtonLink`s for actions to perform on an order. It's props are defined by:
