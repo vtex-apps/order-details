@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "vtex.styleguide": "9.x",
+    "vtex.shipping-estimate-translator": "2.x",
+    "vtex.address-form": "4.x",
+    "vtex.profile-form": "3.x",
     "vtex.my-account-commons": "1.x"
   },
   "mustUpdateAt": "2019-12-19",

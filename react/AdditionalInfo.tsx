@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 
-import Tooltip from './Icons/Tooltip'
+import Tooltip from './icons/Tooltip'
 
 interface Props {
   paymentId: string

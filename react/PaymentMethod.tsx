@@ -4,7 +4,7 @@ import { InjectedIntlProps, injectIntl } from 'react-intl'
 import AdditionalInfo from './AdditionalInfo'
 import ButtonLink from './ButtonLink'
 import Price from './FormattedPrice'
-import InfoIcon from './Icons/Info'
+import InfoIcon from './icons/Info'
 
 interface Props {
   payment: Payment
