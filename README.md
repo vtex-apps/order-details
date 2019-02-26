@@ -257,13 +257,9 @@ Component for rendering product images. Props defined by:
 
 ```typescript
 interface Props {
-  imageProps?: {
-    width?: number;
-    height?: number;
-    className?: string;
-  };
   url: string;
   alt: string;
+  ...props: any;
 }
 ```
 
