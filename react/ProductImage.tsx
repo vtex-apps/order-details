@@ -6,19 +6,14 @@ import { utils } from 'vtex.my-account-commons'
 const { fixImageUrl } = utils
 
 interface Props {
-  imageProps?: {
-    width?: number;
-    height?: number;
-    className?: string;
-  }
   url: string
   alt: string
 }
 
-const ProductImage: FunctionComponent<Props> = ({
-  imageProps,
+const ProductImage: FunctionComponent<Props & any> = ({
   url,
   alt,
+  ...props
 }: Props) => {
   const [maxWidth, setMaxWidth] = useState(50)
   const [maxHeight, setMaxHeight] = useState(50)
@@ -41,11 +36,7 @@ const ProductImage: FunctionComponent<Props> = ({
           resizeHandler(width, height)
         }
       />
-      <img
-        src={fixImageUrl(url, maxWidth, maxHeight)}
-        alt={alt}
-        {...imageProps}
-      />
+      <img src={fixImageUrl(url, maxWidth, maxHeight)} alt={alt} {...props} />
     </Fragment>
   )
 }
