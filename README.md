@@ -242,7 +242,7 @@ interface Payment {
 
 ### Product
 
-Component for rendring information about a product in product list. Props defined by:
+Component for rendering information about a product in product list. Props defined by:
 
 ```typescript
 interface Props {
