@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - CustomerInfo component did not take into account `document` not being present in every country
 - Typings for `render-runtime`
+- Layout adjustments
 
 ### Added
 
