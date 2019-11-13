@@ -17,8 +17,7 @@
     "vtex.profile-form": "3.x",
     "vtex.my-account-commons": "1.x"
   },
-  "mustUpdateAt": "2019-12-19",
-  "scripts": {
-    "postreleasy": "vtex publish --verbose"
-  }
+  "registries": ["smartcheckout"],
+  "policies": [],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

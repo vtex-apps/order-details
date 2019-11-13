@@ -1,15 +1,11 @@
-#### What is the purpose of this pull request?
-<!--- Describe your changes in detail. -->
+#### What does this PR do? \*
 
-#### What problem is this solving?
-<!--- What is the motivation and context for this change? -->
+#### How to test it? \*
 
-#### How should this be manually tested?
+#### Describe alternatives you've considered, if any. \*
 
-#### Screenshots or example usage
+<!--- Optional -->
 
-#### Types of changes
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to change)
-- [ ] Requires change to documentation, which has been updated accordingly.
+#### Related to / Depends on \*
+
+<!--- Optional -->
