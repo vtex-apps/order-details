@@ -3,7 +3,7 @@ import {
   FormattedMessage,
   FormattedTime,
   InjectedIntlProps,
-  injectIntl
+  injectIntl,
 } from 'react-intl'
 import { compose } from 'recompose'
 import { RenderContextProps, withRuntimeContext } from 'vtex.render-runtime'

@@ -31,8 +31,7 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
           <a
             href={productInfo.detailUrl}
             className="t-body c-muted-1 no-underline"
-            target="_blank"
-          >
+            target="_blank">
             <p className="mt3">
               {productInfo.name}
               {showMeasurementUnit && (

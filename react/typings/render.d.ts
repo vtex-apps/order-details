@@ -4,18 +4,18 @@ declare module 'vtex.render-runtime' {
 
   export interface RenderContextProps {
     runtime: {
-      account: string;
+      account: string
     }
   }
 
   export const Link: FunctionComponent<{
-    page?: string;
-    params?: any;
-    query?: any;
-    to?: string;
-    scrollOptions?: RenderScrollOptions;
-    fallbackToWindowLocation?: boolean;
-    replace?: boolean;
+    page?: string
+    params?: any
+    query?: any
+    to?: string
+    scrollOptions?: RenderScrollOptions
+    fallbackToWindowLocation?: boolean
+    replace?: boolean
   }>
   export const NoSSR: ReactElement
   export const RenderContextConsumer: ReactElement

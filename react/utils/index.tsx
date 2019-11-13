@@ -89,10 +89,10 @@ export const orderSplitMessage = ({
   takeaways,
   intl,
 }: {
-  deliveries: number;
-  pickups: number;
-  takeaways: number;
-  intl: ReactIntl.InjectedIntl;
+  deliveries: number
+  pickups: number
+  takeaways: number
+  intl: ReactIntl.InjectedIntl
 }) => {
   const nPickups = pickups > 1
   const nTakeaways = takeaways > 1

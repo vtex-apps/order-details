@@ -64,8 +64,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
           <div
             className="ml4"
             onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
-          >
+            onMouseLeave={() => setIsOpen(false)}>
             <InfoIcon colorToken="c-muted-3" />
           </div>
         </div>

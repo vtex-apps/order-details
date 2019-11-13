@@ -24,8 +24,7 @@ const StorePickUpHeader: FunctionComponent<Props & InjectedIntlProps> = ({
     <header className="flex flex-column">
       <p
         data-testid="storepickup-header"
-        className="t-heading-4-ns t-heading-5"
-      >
+        className="t-heading-4-ns t-heading-5">
         {intl.formatMessage({ id: 'pickup.header.title' })}
         {multiplePickups &&
           intl.formatMessage(

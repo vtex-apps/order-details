@@ -31,8 +31,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          to={`/account#/orders/${orderId}/edit`}
-        >
+          to={`/account#/orders/${orderId}/edit`}>
           {intl.formatMessage({ id: 'order.header.update.button' })}
         </ButtonLink>
       )}
@@ -42,8 +41,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          to="/account#/orders/"
-        >
+          to="/account#/orders/">
           {intl.formatMessage({ id: 'order.header.myorders.button' })}
         </ButtonLink>
       </div>
@@ -60,8 +58,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
           <ButtonLink
             variation="danger-tertiary"
             fullWidth={fullWidth}
-            to={`/account#/orders/${orderId}/cancel`}
-          >
+            to={`/account#/orders/${orderId}/cancel`}>
             {intl.formatMessage({ id: 'order.header.cancel.button' })}
           </ButtonLink>
         )}
