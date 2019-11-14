@@ -1,11 +1,15 @@
 import React, { Fragment, FunctionComponent, useState } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
 import { IconCaretDown, IconCaretUp } from 'vtex.styleguide'
 
 import Price from './FormattedPrice'
 import ProductImage from './ProductImage'
 import Subscription from './Subscription'
 import { isSubscription } from './utils'
+
+const messages = defineMessages({
+  free: { id: 'store/order.totals.pickup.free', defaultMessage: '' },
+})
 
 interface Props {
   attachmentsInfo: Attachment[]
@@ -86,9 +90,7 @@ const ProductAttachment: FunctionComponent<Props & InjectedIntlProps> = ({
               <div className="flex justify-between">
                 <p className="c-on-base">{attachmentItem.name}</p>
                 <div className="flex items-center">
-                  <p className="mr5">
-                    {intl.formatMessage({ id: 'order.totals.pickup.free' })}
-                  </p>
+                  <p className="mr5">{intl.formatMessage(messages.free)}</p>
                   {attachmentItem.content && (
                     <div
                       className="c-action-primary"

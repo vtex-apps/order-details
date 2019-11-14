@@ -4,12 +4,18 @@ import {
   FormattedTime,
   InjectedIntlProps,
   injectIntl,
+  defineMessages,
 } from 'react-intl'
 import { compose } from 'recompose'
 import { RenderContextProps, withRuntimeContext } from 'vtex.render-runtime'
 
 import FormattedDate from './FormattedDate'
 import OrderOptions from './OrderOptions'
+
+const messages = defineMessages({
+  number: { id: 'store/order.header.number', defaultMessage: '' },
+  receipt: { id: 'store/order.header.receipt', defaultMessage: '' },
+})
 
 interface Props {
   orderInfo: Order
@@ -26,16 +32,13 @@ const OrderHeader: FunctionComponent<
   return (
     <header className="flex justify-between items-center">
       <p className="t-heading-3 lh-copy">
-        {intl.formatMessage(
-          { id: 'order.header.number' },
-          {
-            orderId: orderInfo.orderId,
-          }
-        )}
+        {intl.formatMessage(messages.number, {
+          orderId: orderInfo.orderId,
+        })}
         <br />
         <small className="c-muted-2 t-body">
           <FormattedMessage
-            id="order.header.date"
+            id="store/order.header.date"
             values={{
               orderDate: (
                 <FormattedDate date={orderInfo.creationDate} style="short" />
@@ -48,7 +51,7 @@ const OrderHeader: FunctionComponent<
         {storeAccount !== orderSeller && (
           <small className="c-muted-2 t-body">
             <FormattedMessage
-              id="order.header.seller"
+              id="store/order.header.seller"
               values={{
                 seller: <span className="c-action-primary">{orderSeller}</span>,
               }}
@@ -57,7 +60,7 @@ const OrderHeader: FunctionComponent<
         )}
         {takeaway && (
           <a className="c-action-primary t-small" href="#">
-            {intl.formatMessage({ id: 'order.header.receipt' })}
+            {intl.formatMessage(messages.receipt)}
           </a>
         )}
       </p>

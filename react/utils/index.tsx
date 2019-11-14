@@ -1,3 +1,44 @@
+import { defineMessages } from 'react-intl'
+
+const messages = defineMessages({
+  nPickup_nTakeaway: {
+    id: 'store/order.split.n.pickup.n.takeaway',
+    defaultMessage: '',
+  },
+  noPickup_nTakeaway: {
+    id: 'store/order.split.no.pickup.n.takeaway',
+    defaultMessage: '',
+  },
+  nPickup_noTakeaway: {
+    id: 'store/order.split.n.pickup.no.takeaway',
+    defaultMessage: '',
+  },
+  noPickup_noTakeaway: {
+    id: 'store/order.split.no.pickup.no.takeaway',
+    defaultMessage: '',
+  },
+  day: {
+    id: 'store/items.attachments.subscription.frequency.day',
+    defaultMessage: '',
+  },
+  month: {
+    id: 'store/items.attachments.subscription.frequency.month',
+    defaultMessage: '',
+  },
+  week: {
+    id: 'store/items.attachments.subscription.frequency.week',
+    defaultMessage: '',
+  },
+  year: {
+    id: 'store/items.attachments.subscription.frequency.year',
+    defaultMessage: '',
+  },
+  purchaseday: {
+    id: 'store/items.attachments.subscription.purchaseday',
+    defaultMessage: '',
+  },
+})
+
 export const getPaymentGroupFromOrder = (order: Order) => ({
   barCodeNumber:
     order.paymentData.transactions[0].payments[0]
@@ -50,7 +91,7 @@ export const getSubscriptionInfo = (
   const subsFrequencyString = numberPeriodRegex.test(subsFrequency)
     ? intl.formatMessage(
         {
-          id: `items.attachments.subscription.frequency.${
+          id: `store/items.attachments.subscription.frequency.${
             (numberPeriodRegex.exec(subsFrequency) || [])[2]
           }`,
         },
@@ -62,7 +103,7 @@ export const getSubscriptionInfo = (
         }
       )
     : intl.formatMessage({
-        id: `items.attachments.subscription.frequency.${
+        id: `store/items.attachments.subscription.frequency.${
           (wordlyPeriodRegex.exec(subsFrequency) || [])[1]
         }`,
       })
@@ -70,7 +111,7 @@ export const getSubscriptionInfo = (
   const subsPurchaseDayString =
     subsPurchaseDay !== ''
       ? intl.formatMessage(
-          { id: 'items.attachments.subscription.purchaseday' },
+          { id: 'store/items.attachments.subscription.purchaseday' },
           { purchaseday: subsPurchaseDay }
         )
       : null
@@ -97,25 +138,14 @@ export const orderSplitMessage = ({
   const nPickups = pickups > 1
   const nTakeaways = takeaways > 1
 
+  let message = messages.noPickup_noTakeaway
   if (nPickups && nTakeaways) {
-    return intl.formatMessage(
-      { id: 'order.split.n.pickup.n.takeaway' },
-      { deliveries, pickups, takeaways }
-    )
+    message = messages.nPickup_nTakeaway
   } else if (nTakeaways) {
-    return intl.formatMessage(
-      { id: 'order.split.no.pickup.n.takeaway' },
-      { deliveries, pickups, takeaways }
-    )
+    message = messages.noPickup_nTakeaway
   } else if (nPickups) {
-    return intl.formatMessage(
-      { id: 'order.split.n.pickup.no.takeaway' },
-      { deliveries, pickups, takeaways }
-    )
+    message = messages.nPickup_noTakeaway
   }
 
-  return intl.formatMessage(
-    { id: 'order.split.no.pickup.no.takeaway' },
-    { deliveries, pickups, takeaways }
-  )
+  return intl.formatMessage(message, { deliveries, pickups, takeaways })
 }

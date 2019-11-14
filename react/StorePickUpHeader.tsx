@@ -1,8 +1,13 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
 import Address from './Address'
+
+const messages = defineMessages({
+  title: { id: 'store/pickup.header.title', defaultMessage: '' },
+  counter: { id: 'store/common.header.counter', defaultMessage: '' },
+})
 
 interface Props {
   shippingData: Parcel
@@ -25,15 +30,12 @@ const StorePickUpHeader: FunctionComponent<Props & InjectedIntlProps> = ({
       <p
         data-testid="storepickup-header"
         className="t-heading-4-ns t-heading-5">
-        {intl.formatMessage({ id: 'pickup.header.title' })}
+        {intl.formatMessage(messages.title)}
         {multiplePickups &&
-          intl.formatMessage(
-            { id: 'common.header.counter' },
-            {
-              index: index + 1,
-              numPackages,
-            }
-          )}
+          intl.formatMessage(messages.counter, {
+            index: index + 1,
+            numPackages,
+          })}
         <br />
         <small className="c-muted-2 t-small">
           <TranslateEstimate

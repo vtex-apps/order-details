@@ -1,8 +1,12 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
 
 import FormattedPrice from './FormattedPrice'
 import ProductImage from './ProductImage'
+
+const messages = defineMessages({
+  quantity: { id: 'store/products.quantity', defaultMessage: '' },
+})
 
 interface Props {
   productInfo: OrderItem
@@ -45,12 +49,9 @@ const Product: FunctionComponent<Props & InjectedIntlProps> = ({
             </p>
           </a>
           <p className="t-mini c-muted-1 tc tl-m mb3">
-            {intl.formatMessage(
-              { id: 'products.quantity' },
-              {
-                quantity: productInfo.quantity,
-              }
-            )}
+            {intl.formatMessage(messages.quantity, {
+              quantity: productInfo.quantity,
+            })}
           </p>
         </div>
       </div>

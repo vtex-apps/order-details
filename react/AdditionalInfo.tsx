@@ -1,7 +1,12 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
 
 import Tooltip from './icons/Tooltip'
+
+const messages = defineMessages({
+  paymentId: { id: 'store/payments.id', defaultMessage: '' },
+  transactionId: { id: 'store/payments.transaction.id', defaultMessage: '' },
+})
 
 interface Props {
   paymentId: string
@@ -19,15 +24,12 @@ const AdditionalInfo: FunctionComponent<Props & InjectedIntlProps> = ({
     {showTooltip && <Tooltip colorToken="c-on-base" />}
     <div className="bg-base--inverted pa4 br2">
       <p className="c-on-base--inverted tc">
-        {intl.formatMessage({ id: 'payments.id' }, { id: paymentId })}
+        {intl.formatMessage(messages.paymentId, { id: paymentId })}
       </p>
       <p className="c-on-base--inverted tc">
-        {intl.formatMessage(
-          { id: 'payments.transaction.id' },
-          {
-            id: transactionId,
-          }
-        )}
+        {intl.formatMessage(messages.transactionId, {
+          id: transactionId,
+        })}
       </p>
     </div>
   </div>
