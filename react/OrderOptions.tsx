@@ -4,16 +4,16 @@ import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
 import ButtonLink from './ButtonLink'
 
 const messages = defineMessages({
-  printreceiptButton: {
+  printReceiptButton: {
     id: 'store/order.header.takeaway.printreceipt.button',
     defaultMessage: '',
   },
   updateButton: { id: 'store/order.header.update.button', defaultMessage: '' },
-  myordersButton: {
+  myOrdersButton: {
     id: 'store/order.header.myorders.button',
     defaultMessage: '',
   },
-  takeawayCancelButton: {
+  takeAwayCancelButton: {
     id: 'store/order.header.takeaway.cancel.button',
     defaultMessage: '',
   },
@@ -40,7 +40,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
     <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
       {takeaway ? (
         <ButtonLink variation="secondary" fullWidth={fullWidth} to="">
-          {intl.formatMessage(messages.printreceiptButton)}
+          {intl.formatMessage(messages.printReceiptButton)}
         </ButtonLink>
       ) : (
         <ButtonLink
@@ -57,7 +57,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
           variation="secondary"
           fullWidth={fullWidth}
           to="/account#/orders/">
-          {intl.formatMessage(messages.myordersButton)}
+          {intl.formatMessage(messages.myOrdersButton)}
         </ButtonLink>
       </div>
     )}
@@ -65,7 +65,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
       <div className="w-100 w-auto-m">
         {takeaway ? (
           <ButtonLink variation="danger-tertiary" fullWidth={fullWidth} to="">
-            {intl.formatMessage(messages.takeawayCancelButton)}
+            {intl.formatMessage(messages.takeAwayCancelButton)}
           </ButtonLink>
         ) : (
           <ButtonLink

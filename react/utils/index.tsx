@@ -88,25 +88,27 @@ export const getSubscriptionInfo = (
   // This matches a key in the format: "weekly"
   const wordlyPeriodRegex = /([A-z]{1,20})/
 
-  const subsFrequencyString = numberPeriodRegex.test(subsFrequency)
-    ? intl.formatMessage(
+  let subsFrequencyString = ''
+  if (numberPeriodRegex.test(subsFrequency)) {
+    const frequency = numberPeriodRegex.exec(subsFrequency)
+    if (frequency && frequency.length > 2) {
+      subsFrequencyString = intl.formatMessage(
         {
-          id: `store/items.attachments.subscription.frequency.${
-            (numberPeriodRegex.exec(subsFrequency) || [])[2]
-          }`,
+          id: `store/items.attachments.subscription.frequency.${frequency[2]}`,
         },
         {
-          frequencyNumber: parseInt(
-            (numberPeriodRegex.exec(subsFrequency) || [])[1],
-            10
-          ),
+          frequencyNumber: parseInt(frequency[1], 10),
         }
       )
-    : intl.formatMessage({
-        id: `store/items.attachments.subscription.frequency.${
-          (wordlyPeriodRegex.exec(subsFrequency) || [])[1]
-        }`,
+    }
+  } else if (wordlyPeriodRegex.test(subsFrequency)) {
+    const frequency = wordlyPeriodRegex.exec(subsFrequency)
+    if (frequency && frequency.length > 0) {
+      subsFrequencyString = intl.formatMessage({
+        id: `store/items.attachments.subscription.frequency.${frequency[1]}`,
       })
+    }
+  }
 
   const subsPurchaseDayString =
     subsPurchaseDay !== ''
