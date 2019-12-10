@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "order-details",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Order Details Components",
   "description": "Components to display information on an order",
   "defaultLocale": "pt-BR",
@@ -17,7 +17,9 @@
     "vtex.profile-form": "3.x",
     "vtex.my-account-commons": "1.x"
   },
-  "registries": ["smartcheckout"],
+  "registries": [
+    "smartcheckout"
+  ],
   "policies": [],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
