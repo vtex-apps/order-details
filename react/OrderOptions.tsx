@@ -1,7 +1,24 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
 
 import ButtonLink from './ButtonLink'
+
+const messages = defineMessages({
+  printReceiptButton: {
+    id: 'store/order.header.takeaway.printreceipt.button',
+    defaultMessage: '',
+  },
+  updateButton: { id: 'store/order.header.update.button', defaultMessage: '' },
+  myOrdersButton: {
+    id: 'store/order.header.myorders.button',
+    defaultMessage: '',
+  },
+  takeAwayCancelButton: {
+    id: 'store/order.header.takeaway.cancel.button',
+    defaultMessage: '',
+  },
+  cancelButton: { id: 'store/order.header.cancel.button', defaultMessage: '' },
+})
 
 interface Props {
   allowCancellation: boolean
@@ -23,17 +40,14 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
     <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
       {takeaway ? (
         <ButtonLink variation="secondary" fullWidth={fullWidth} to="">
-          {intl.formatMessage({
-            id: 'order.header.takeaway.printreceipt.button',
-          })}
+          {intl.formatMessage(messages.printReceiptButton)}
         </ButtonLink>
       ) : (
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          to={`/account#/orders/${orderId}/edit`}
-        >
-          {intl.formatMessage({ id: 'order.header.update.button' })}
+          to={`/account#/orders/${orderId}/edit`}>
+          {intl.formatMessage(messages.updateButton)}
         </ButtonLink>
       )}
     </div>
@@ -42,9 +56,8 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
         <ButtonLink
           variation="secondary"
           fullWidth={fullWidth}
-          to="/account#/orders/"
-        >
-          {intl.formatMessage({ id: 'order.header.myorders.button' })}
+          to="/account#/orders/">
+          {intl.formatMessage(messages.myOrdersButton)}
         </ButtonLink>
       </div>
     )}
@@ -52,17 +65,14 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
       <div className="w-100 w-auto-m">
         {takeaway ? (
           <ButtonLink variation="danger-tertiary" fullWidth={fullWidth} to="">
-            {intl.formatMessage({
-              id: 'order.header.takeaway.cancel.button',
-            })}
+            {intl.formatMessage(messages.takeAwayCancelButton)}
           </ButtonLink>
         ) : (
           <ButtonLink
             variation="danger-tertiary"
             fullWidth={fullWidth}
-            to={`/account#/orders/${orderId}/cancel`}
-          >
-            {intl.formatMessage({ id: 'order.header.cancel.button' })}
+            to={`/account#/orders/${orderId}/cancel`}>
+            {intl.formatMessage(messages.cancelButton)}
           </ButtonLink>
         )}
       </div>

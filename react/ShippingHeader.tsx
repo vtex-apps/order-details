@@ -1,8 +1,14 @@
 import React, { FunctionComponent } from 'react'
-import { InjectedIntlProps, injectIntl } from 'react-intl'
+import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
 import { TranslateEstimate } from 'vtex.shipping-estimate-translator'
 
 import Address from './Address'
+
+const messages = defineMessages({
+  title: { id: 'store/shipping.header.title', defaultMessage: '' },
+  counter: { id: 'store/common.header.counter', defaultMessage: '' },
+  address: { id: 'store/shipping.header.wishlist.address', defaultMessage: '' },
+})
 
 interface Props {
   shippingData: Parcel
@@ -22,15 +28,12 @@ const ShippingHeader: FunctionComponent<Props & InjectedIntlProps> = ({
   return (
     <header>
       <p data-testid="shipping-header" className="t-heading-4-ns t-heading-5">
-        {intl.formatMessage({ id: 'shipping.header.title' })}
+        {intl.formatMessage(messages.title)}
         {multipleDeliveries &&
-          intl.formatMessage(
-            { id: 'common.header.counter' },
-            {
-              index: index + 1,
-              numPackages,
-            }
-          )}
+          intl.formatMessage(messages.counter, {
+            index: index + 1,
+            numPackages,
+          })}
         <br />
         <small className="c-muted-2 t-small">
           <TranslateEstimate
@@ -44,10 +47,9 @@ const ShippingHeader: FunctionComponent<Props & InjectedIntlProps> = ({
       {giftRegistry &&
       giftRegistry.addressId === shippingData.address.addressId ? (
         <p className="c-muted-1">
-          {intl.formatMessage(
-            { id: 'shipping.header.wishlist.address' },
-            { giftRegistryName: giftRegistry.description }
-          )}
+          {intl.formatMessage(messages.address, {
+            giftRegistryName: giftRegistry.description,
+          })}
         </p>
       ) : (
         <Address address={shippingData.address} />

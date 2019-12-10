@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Repo configs based on [React-app Template](https://github.com/vtex-apps/react-app-template/)
+
 ## [1.0.1] - 2019-11-13
 
 ## [1.0.0] - 2019-02-27
