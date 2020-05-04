@@ -1,10 +1,15 @@
 import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { ProfileRules, ProfileSummary } from 'vtex.profile-form'
-
 import { useCssHandles } from 'vtex.css-handles'
 
-const CSS_HANDLES = ['costumerInfoListContainer', 'costumerInfoListName', 'costumerInfoListEmail', 'costumerInfoListDocument', 'costumerInfoListPhone']
+const CSS_HANDLES = [
+  'costumerInfoListContainer',
+  'costumerInfoListName',
+  'costumerInfoListEmail',
+  'costumerInfoListDocument',
+  'costumerInfoListPhone'
+]
 
 interface Props {
   profile: ClientProfile
@@ -22,14 +27,26 @@ const CustomerInfo: FunctionComponent<Props & InjectedIntlProps> = ({
           {({ personalData }: any) => (
             <ul className={`${handles.costumerInfoListContainer} list pl0`}>
               <li className={`${handles.costumerInfoListName} pv2`}>
-                {`${personalData.firstName.value} ${personalData.lastName.value}`}
+                {`${personalData.firstName.value} ${
+                  personalData.lastName.value
+                }`}
               </li>
-              <li className={`${handles.costumerInfoListEmail} pv2 c-muted-2`}>{personalData.email.value}</li>
+              <li className={`${handles.costumerInfoListEmail} pv2 c-muted-2`}>
+                {personalData.email.value}
+              </li>
               {personalData.document && (
-                <li className={`${handles.costumerInfoListDocument} pv2 c-muted-2`}>{personalData.document.value}</li>
+                <li
+                  className={`${
+                    handles.costumerInfoListDocument
+                  } pv2 c-muted-2`}>
+                  {personalData.document.value}
+                </li>
               )}
               {profile.phone && (
-                <li className={`${handles.costumerInfoListPhone} pv2 c-muted-2`}>{profile.phone}</li>
+                <li
+                  className={`${handles.costumerInfoListPhone} pv2 c-muted-2`}>
+                  {profile.phone}
+                </li>
               )}
             </ul>
           )}

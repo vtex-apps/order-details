@@ -7,14 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Changed
-
-- CostumerInfo function structure
-
 ### Added
 
 - CSS Handles for CostumerInfo component
-
 
 ## [1.0.2] - 2019-12-10
 
