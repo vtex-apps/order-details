@@ -2,6 +2,10 @@ import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { ProfileRules, ProfileSummary } from 'vtex.profile-form'
 
+import { useCssHandles } from 'vtex.css-handles'
+
+const CSS_HANDLES = ['costumerInfoListContainer', 'costumerInfoListName', 'costumerInfoListEmail', 'costumerInfoListDocument', 'costumerInfoListPhone']
+
 interface Props {
   profile: ClientProfile
 }
@@ -9,27 +13,30 @@ interface Props {
 const CustomerInfo: FunctionComponent<Props & InjectedIntlProps> = ({
   profile,
   intl,
-}) => (
-  <div className="flex flex-column c-on-base">
-    <ProfileRules country={intl.locale} shouldUseIOFetching>
-      <ProfileSummary profile={profile}>
-        {({ personalData }: any) => (
-          <ul className="list pl0">
-            <li className="pv2">
-              {`${personalData.firstName.value} ${personalData.lastName.value}`}
-            </li>
-            <li className="pv2 c-muted-2">{personalData.email.value}</li>
-            {personalData.document && (
-              <li className="pv2 c-muted-2">{personalData.document.value}</li>
-            )}
-            {profile.phone && (
-              <li className="pv2 c-muted-2">{profile.phone}</li>
-            )}
-          </ul>
-        )}
-      </ProfileSummary>
-    </ProfileRules>
-  </div>
-)
+}) => {
+  const handles = useCssHandles(CSS_HANDLES)
+  return (
+    <div className="flex flex-column c-on-base">
+      <ProfileRules country={intl.locale} shouldUseIOFetching>
+        <ProfileSummary profile={profile}>
+          {({ personalData }: any) => (
+            <ul className={`${handles.costumerInfoListContainer} list pl0`}>
+              <li className={`${handles.costumerInfoListName} pv2`}>
+                {`${personalData.firstName.value} ${personalData.lastName.value}`}
+              </li>
+              <li className={`${handles.costumerInfoListEmail} pv2 c-muted-2`}>{personalData.email.value}</li>
+              {personalData.document && (
+                <li className={`${handles.costumerInfoListDocument} pv2 c-muted-2`}>{personalData.document.value}</li>
+              )}
+              {profile.phone && (
+                <li className={`${handles.costumerInfoListPhone} pv2 c-muted-2`}>{profile.phone}</li>
+              )}
+            </ul>
+          )}
+        </ProfileSummary>
+      </ProfileRules>
+    </div>
+  )
+}
 
 export default injectIntl(CustomerInfo)

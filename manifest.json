@@ -15,7 +15,8 @@
     "vtex.shipping-estimate-translator": "2.x",
     "vtex.address-form": "4.x",
     "vtex.profile-form": "3.x",
-    "vtex.my-account-commons": "1.x"
+    "vtex.my-account-commons": "1.x",
+    "vtex.css-handles": "0.x"
   },
   "registries": [
     "smartcheckout"
