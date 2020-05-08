@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- CSS Handles for CostumerInfo component
+- CSS Handles for CustomerInfo component
 
 ## [1.0.2] - 2019-12-10
 
