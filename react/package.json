@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "react-intl": "^2.7.2",
     "react-resize-detector": "^3.4.0",
     "recompose": "^0.30.0"
