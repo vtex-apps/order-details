@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
-
+import { useCssHandles } from 'vtex.css-handles'
 import ButtonLink from './ButtonLink'
 
 const messages = defineMessages({
@@ -28,6 +28,14 @@ interface Props {
   orderId?: string
 }
 
+const CSS_HANDLES = [
+  'printReceiptButton',
+  'updateOrderButton',
+  'myOrdersButton',
+  'takeAwayCancelButton',
+  'cancelButton'
+]
+
 const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   allowCancellation,
   takeaway,
@@ -35,49 +43,63 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   className = '',
   fullWidth,
   orderId,
-}) => (
-  <div className={`${className} flex flex-wrap justify-center flex-nowrap-m`}>
-    <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
-      {takeaway ? (
-        <ButtonLink variation="secondary" fullWidth={fullWidth} to="">
-          {intl.formatMessage(messages.printReceiptButton)}
-        </ButtonLink>
-      ) : (
-        <ButtonLink
-          variation="secondary"
-          fullWidth={fullWidth}
-          to={`/account#/orders/${orderId}/edit`}>
-          {intl.formatMessage(messages.updateButton)}
-        </ButtonLink>
-      )}
-    </div>
-    {!takeaway && (
+}) => {
+  const handles = useCssHandles(CSS_HANDLES)
+
+  return (
+    <div className={`${className} flex flex-wrap justify-center flex-nowrap-m`}>
       <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
-        <ButtonLink
-          variation="secondary"
-          fullWidth={fullWidth}
-          to="/account#/orders/">
-          {intl.formatMessage(messages.myOrdersButton)}
-        </ButtonLink>
-      </div>
-    )}
-    {allowCancellation && (
-      <div className="w-100 w-auto-m">
         {takeaway ? (
-          <ButtonLink variation="danger-tertiary" fullWidth={fullWidth} to="">
-            {intl.formatMessage(messages.takeAwayCancelButton)}
-          </ButtonLink>
+          <div className={handles.printReceiptButton}>
+            <ButtonLink variation="secondary" fullWidth={fullWidth} to="">
+              {intl.formatMessage(messages.printReceiptButton)}
+            </ButtonLink>
+          </div>
         ) : (
-          <ButtonLink
-            variation="danger-tertiary"
-            fullWidth={fullWidth}
-            to={`/account#/orders/${orderId}/cancel`}>
-            {intl.formatMessage(messages.cancelButton)}
-          </ButtonLink>
+          <div className={handles.updateOrderButton}>
+            <ButtonLink
+              variation="secondary"
+              fullWidth={fullWidth}
+              to={`/account#/orders/${orderId}/edit`}>
+              {intl.formatMessage(messages.updateButton)}
+            </ButtonLink>
+          </div>
         )}
       </div>
-    )}
-  </div>
-)
+      {!takeaway && (
+        <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
+          <div className={handles.myOrdersButton}>
+            <ButtonLink
+              variation="secondary"
+              fullWidth={fullWidth}
+              to="/account#/orders/">
+              {intl.formatMessage(messages.myOrdersButton)}
+            </ButtonLink>
+          </div>
+        </div>
+      )}
+      {allowCancellation && (
+        <div className="w-100 w-auto-m">
+          {takeaway ? (
+            <div className={handles.takeAwayCancelButton}>
+              <ButtonLink variation="danger-tertiary" fullWidth={fullWidth} to="">
+                {intl.formatMessage(messages.takeAwayCancelButton)}
+              </ButtonLink>
+            </div>
+          ) : (
+            <div className={handles.cancelButton}>
+              <ButtonLink
+                variation="danger-tertiary"
+                fullWidth={fullWidth}
+                to={`/account#/orders/${orderId}/cancel`}>
+                {intl.formatMessage(messages.cancelButton)}
+              </ButtonLink>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default injectIntl(OrderOptions)
