@@ -29,7 +29,8 @@
     "tslint-config-vtex": "^2.1.0",
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "3.5.2",
-    "typescript-babel-jest": "^1.0.5"
+    "typescript-babel-jest": "^1.0.5",
+    "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.2/public/@types/vtex.css-handles"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"

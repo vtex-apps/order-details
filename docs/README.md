@@ -150,6 +150,8 @@ interface Props {
   takeaway?: boolean;
   className?: string;
   fullWidth?: boolean;
+  displayUpdateOrderButton?: boolean;
+  displayMyOrdersButton?: boolean;
   orderId?: string;
 }
 ```

@@ -25,7 +25,23 @@ interface Props {
   takeaway?: boolean
   className?: string
   fullWidth?: boolean
+  displayUpdateOrderButton?: boolean
+  displayMyOrdersButton?: boolean
   orderId?: string
+}
+
+const renderUpdateButton = (render:any, fullWidth:any, intl:any, orderId:any) => {
+  if(render) {
+    return (
+      <ButtonLink
+        variation="secondary"
+        fullWidth={fullWidth}
+        to={`/account#/orders/${orderId}/edit`}>
+        {intl.formatMessage(messages.updateButton)}
+      </ButtonLink>
+    )
+  }
+  return null;
 }
 
 const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
@@ -35,6 +51,8 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   className = '',
   fullWidth,
   orderId,
+  displayUpdateOrderButton = true,
+  displayMyOrdersButton = true,
 }) => (
   <div className={`${className} flex flex-wrap justify-center flex-nowrap-m`}>
     <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
@@ -43,15 +61,11 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
           {intl.formatMessage(messages.printReceiptButton)}
         </ButtonLink>
       ) : (
-        <ButtonLink
-          variation="secondary"
-          fullWidth={fullWidth}
-          to={`/account#/orders/${orderId}/edit`}>
-          {intl.formatMessage(messages.updateButton)}
-        </ButtonLink>
+        renderUpdateButton(displayUpdateOrderButton, fullWidth, intl, orderId)
+
       )}
     </div>
-    {!takeaway && (
+    {!takeaway && displayMyOrdersButton && (
       <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
         <ButtonLink
           variation="secondary"
