@@ -34,7 +34,7 @@ const CSS_HANDLES = [
   'myOrdersButton',
   'takeAwayCancelButton',
   'cancelButton'
-]
+] as const
 
 const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   allowCancellation,
