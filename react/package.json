@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "lodash": "^4.17.11",
     "react-intl": "^2.7.2",
     "react-resize-detector": "^3.4.0",
     "recompose": "^0.30.0"
@@ -28,14 +27,21 @@
     "tslint": "^5.12.1",
     "tslint-config-vtex": "^2.1.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "3.5.2",
-    "typescript-babel-jest": "^1.0.5"
+    "typescript": "3.9.7",
+    "typescript-babel-jest": "^1.0.5",
+    "vtex.address-form": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.address-form@4.6.3/public/_types/react",
+    "vtex.css-handles": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.css-handles@0.4.4/public/@types/vtex.css-handles",
+    "vtex.my-account-commons": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.my-account-commons@1.5.2/public/@types/vtex.my-account-commons",
+    "vtex.profile-form": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.profile-form@3.3.3/public/_types/react",
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.124.3/public/@types/vtex.render-runtime",
+    "vtex.shipping-estimate-translator": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-estimate-translator@2.2.2/public/@types/vtex.shipping-estimate-translator",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.133.2/public/@types/vtex.styleguide"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
   },
   "scripts": {
-    "lint": "tsc --noEmit && eslint --quiet --fix --ext ts,tsx .",
+    "lint": "eslint --quiet --fix --ext ts,tsx .",
     "test": "vtex-test-tools test"
   },
   "version": "1.1.0"

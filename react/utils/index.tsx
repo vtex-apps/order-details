@@ -151,3 +151,20 @@ export const orderSplitMessage = ({
 
   return intl.formatMessage(message, { deliveries, pickups, takeaways })
 }
+
+export function parseBankInvoiceUrl({
+  url,
+  rootPath = '',
+}: {
+  url: string
+  rootPath?: string
+}) {
+  const isEncrypted = Boolean(url.match(/(\*.\*.)+\*\w\*/g))
+  if (!isEncrypted) return url
+
+  const encodedPath = encodeURIComponent(
+    window.location.pathname + window.location.search
+  )
+
+  return `${rootPath}/login?returnUrl=${encodedPath}`
+}
