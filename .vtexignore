@@ -7,3 +7,7 @@ src/
 package.json
 README.md
 CHANGELOG.md
+**/__tests__
+**/__mocks__
+**/*.test.*
+react/testUtils/**
