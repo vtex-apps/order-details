@@ -1,10 +1,12 @@
 import React, { FunctionComponent, useState } from 'react'
 import { InjectedIntlProps, injectIntl, defineMessages } from 'react-intl'
+import { useRuntime } from 'vtex.render-runtime'
 
 import AdditionalInfo from './AdditionalInfo'
 import ButtonLink from './ButtonLink'
 import Price from './FormattedPrice'
 import InfoIcon from './icons/Info'
+import { parseBankInvoiceUrl } from './utils'
 
 const messages = defineMessages({
   creditcard: { id: 'store/payments.creditcard', defaultMessage: '' },
@@ -44,6 +46,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
   currency,
   intl,
 }) => {
+  const { rootPath } = useRuntime()
   const [isOpen, setIsOpen] = useState(false)
   const hasLastDigits = !!payment.lastDigits
   const isBankInvoice = payment.group === 'bankInvoice'
@@ -82,7 +85,10 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
         </div>
         {isBankInvoice && payment.url && (
           <div className="mt5">
-            <ButtonLink to={payment.url} variation="primary" openNewWindow>
+            <ButtonLink
+              to={parseBankInvoiceUrl({ url: payment.url, rootPath })}
+              variation="primary"
+              openNewWindow>
               {intl.formatMessage(messages.print, {
                 paymentSystemName: payment.paymentSystemName,
               })}
