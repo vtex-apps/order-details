@@ -152,6 +152,7 @@ interface Props {
   fullWidth?: boolean;
   displayUpdateOrderButton?: boolean;
   displayMyOrdersButton?: boolean;
+  displayCancelOrderButton?: boolean;
   orderId?: string;
 }
 ```

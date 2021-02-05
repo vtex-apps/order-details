@@ -27,6 +27,7 @@ interface Props {
   fullWidth?: boolean
   displayUpdateOrderButton?: boolean
   displayMyOrdersButton?: boolean
+  displayCancelOrderButton?: boolean
   orderId?: string
 }
 
@@ -53,45 +54,46 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   orderId,
   displayUpdateOrderButton = true,
   displayMyOrdersButton = true,
+  displayCancelOrderButton = true,
 }) => (
-  <div className={`${className} flex flex-wrap justify-center flex-nowrap-m`}>
-    <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
-      {takeaway ? (
-        <ButtonLink variation="secondary" fullWidth={fullWidth} to="">
-          {intl.formatMessage(messages.printReceiptButton)}
-        </ButtonLink>
-      ) : (
-        renderUpdateButton(displayUpdateOrderButton, fullWidth, intl, orderId)
-
-      )}
-    </div>
-    {!takeaway && displayMyOrdersButton && (
+    <div className={`${className} flex flex-wrap justify-center flex-nowrap-m`}>
       <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
-        <ButtonLink
-          variation="secondary"
-          fullWidth={fullWidth}
-          to="/account#/orders/">
-          {intl.formatMessage(messages.myOrdersButton)}
-        </ButtonLink>
-      </div>
-    )}
-    {allowCancellation && (
-      <div className="w-100 w-auto-m">
         {takeaway ? (
-          <ButtonLink variation="danger-tertiary" fullWidth={fullWidth} to="">
-            {intl.formatMessage(messages.takeAwayCancelButton)}
+          <ButtonLink variation="secondary" fullWidth={fullWidth} to="">
+            {intl.formatMessage(messages.printReceiptButton)}
           </ButtonLink>
         ) : (
-          <ButtonLink
-            variation="danger-tertiary"
-            fullWidth={fullWidth}
-            to={`/account#/orders/${orderId}/cancel`}>
-            {intl.formatMessage(messages.cancelButton)}
-          </ButtonLink>
+          renderUpdateButton(displayUpdateOrderButton, fullWidth, intl, orderId)
+
         )}
       </div>
-    )}
-  </div>
-)
+      {!takeaway && displayMyOrdersButton && (
+        <div className="mr5-ns mb5-s mb0-m w-100 w-auto-m">
+          <ButtonLink
+            variation="secondary"
+            fullWidth={fullWidth}
+            to="/account#/orders/">
+            {intl.formatMessage(messages.myOrdersButton)}
+          </ButtonLink>
+        </div>
+      )}
+      {allowCancellation && displayCancelOrderButton && (
+        <div className="w-100 w-auto-m">
+          {takeaway ? (
+            <ButtonLink variation="danger-tertiary" fullWidth={fullWidth} to="">
+              {intl.formatMessage(messages.takeAwayCancelButton)}
+            </ButtonLink>
+          ) : (
+            <ButtonLink
+              variation="danger-tertiary"
+              fullWidth={fullWidth}
+              to={`/account#/orders/${orderId}/cancel`}>
+              {intl.formatMessage(messages.cancelButton)}
+            </ButtonLink>
+          )}
+        </div>
+      )}
+    </div>
+  )
 
 export default injectIntl(OrderOptions)
