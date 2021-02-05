@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `displayMyOrdersButton` prop to OrderOptions.
 - `displayUpdateOrderButton` prop to OrderOptions
 
+## [1.1.1] - 2020-11-16
+### Fixed
+- Redirect to login when trying to print bank invoice while not logged-in.
+
 ## [1.1.0] - 2020-05-11
 
 ### Added
