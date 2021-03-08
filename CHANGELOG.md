@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Added
+
+- Added CSS Handles `paymentType` & `paymentValue` on PaymentMethod
+- Added CSS Handle `addressContainer` on Address
+
 ## [1.1.1] - 2020-11-16
 ### Fixed
 - Redirect to login when trying to print bank invoice while not logged-in.
