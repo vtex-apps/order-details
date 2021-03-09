@@ -12,8 +12,8 @@ const CSS_HANDLES = [
 ] as const
 
 const Address: FunctionComponent<Props> = ({ address, pickup }) => {
-
   const handles = useCssHandles(CSS_HANDLES)
+  
   return (
     <div className={`${handles.addressContainer} c-muted-1 lh-copy`} data-testid="address-component">
       {pickup && (
