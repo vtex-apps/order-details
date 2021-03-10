@@ -27,7 +27,7 @@ interface Props {
 }
 
 const CSS_HANDLES = [
-  'paymentType',
+  'paymentGroup',
   'paymentValue'
 ] as const
 
