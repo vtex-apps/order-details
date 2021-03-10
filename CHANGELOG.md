@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Added
 
-- Added CSS Handles `paymentType` & `paymentValue` on PaymentMethod
+- Added CSS Handles `paymentGroup` & `paymentValue` on PaymentMethod
 - Added CSS Handle `addressContainer` on Address
 
 ## [1.1.1] - 2020-11-16
