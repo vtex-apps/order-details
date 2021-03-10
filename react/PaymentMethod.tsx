@@ -7,6 +7,7 @@ import ButtonLink from './ButtonLink'
 import Price from './FormattedPrice'
 import InfoIcon from './icons/Info'
 import { parseBankInvoiceUrl } from './utils'
+import { useCssHandles } from 'vtex.css-handles'
 
 const messages = defineMessages({
   creditcard: { id: 'store/payments.creditcard', defaultMessage: '' },
@@ -24,6 +25,11 @@ interface Props {
   transactionId: string
   currency: string
 }
+
+const CSS_HANDLES = [
+  'paymentGroup',
+  'paymentValue'
+] as const
 
 const paymentGroupSwitch = (payment: Payment, intl: ReactIntl.InjectedIntl) => {
   switch (payment.group) {
@@ -50,11 +56,12 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
   const [isOpen, setIsOpen] = useState(false)
   const hasLastDigits = !!payment.lastDigits
   const isBankInvoice = payment.group === 'bankInvoice'
+  const handles = useCssHandles(CSS_HANDLES)
 
   return (
     <article className="flex justify-between">
       <div className="t-body lh-solid">
-        <p className="c-on-base">{paymentGroupSwitch(payment, intl)}</p>
+        <p className={`${handles.paymentGroup} c-on-base`}>{paymentGroupSwitch(payment, intl)}</p>
         {hasLastDigits && (
           <p className="c-muted-1 mb3">
             {intl.formatMessage(messages.lastDigits, {
@@ -63,7 +70,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
           </p>
         )}
         <div className="flex items-center">
-          <p className="c-muted-1 mv0">
+          <p className={`${handles.paymentValue} c-muted-1 mv0`}>
             <Price value={payment.value} currency={currency} />
             {` ${intl.formatMessage(messages.installments, {
               installments: payment.installments,
