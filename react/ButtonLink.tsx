@@ -9,6 +9,7 @@ interface Props {
   openNewWindow?: boolean
   variation: string
   children: ReactChild
+  className?: string
 }
 
 const ButtonLink: FunctionComponent<Props> = ({
@@ -17,8 +18,9 @@ const ButtonLink: FunctionComponent<Props> = ({
   fullWidth,
   variation,
   children,
+  className
 }) => (
-  <Link to={to} data-testid="button-link">
+  <Link className={className} to={to} data-testid="button-link">
     {icon ? (
       <ButtonWithIcon icon={icon} variation={variation} block={fullWidth}>
         {children}
