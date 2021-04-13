@@ -61,7 +61,7 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
   return (
     <article className="flex justify-between">
       <div className="t-body lh-solid">
-        <p className={`${handles.paymentGroup} c-on-base`}>{paymentGroupSwitch(payment, intl)}</p>
+        <p className={`${handles.paymentGroup} ${handles.paymentGroup}--${payment.group} c-on-base`}>{paymentGroupSwitch(payment, intl)}</p>
         {hasLastDigits && (
           <p className="c-muted-1 mb3">
             {intl.formatMessage(messages.lastDigits, {
