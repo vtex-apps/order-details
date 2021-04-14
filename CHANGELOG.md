@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Translation for gift card.
+
 ## [1.3.0] - 2021-03-25
 ### Added
 - CSS Handles `updateOrderButton`, `myOrdersButton`, and `cancelOrderButton` on `OrderOptions`.

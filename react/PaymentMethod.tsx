@@ -16,6 +16,7 @@ const messages = defineMessages({
     id: 'store/payments.creditcard.lastDigits',
     defaultMessage: '',
   },
+  giftCard: { id: 'store/payments.giftCard', defaultMessage: '' },
   installments: { id: 'store/payments.installments', defaultMessage: '' },
   print: { id: 'store/payments.bankinvoice.print', defaultMessage: '' },
 })
@@ -41,6 +42,8 @@ const paymentGroupSwitch = (payment: Payment, intl: ReactIntl.InjectedIntl) => {
       return payment.paymentSystemName
     case 'debitCard':
       return intl.formatMessage(messages.debitcard)
+    case 'giftCard':
+      return intl.formatMessage(messages.giftCard)
     default:
       return payment.paymentSystemName
   }
@@ -61,7 +64,9 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
   return (
     <article className="flex justify-between">
       <div className="t-body lh-solid">
-        <p className={`${handles.paymentGroup} c-on-base`}>{paymentGroupSwitch(payment, intl)}</p>
+        <p className={`${handles.paymentGroup} c-on-base`}>
+          {paymentGroupSwitch(payment, intl)}
+        </p>
         {hasLastDigits && (
           <p className="c-muted-1 mb3">
             {intl.formatMessage(messages.lastDigits, {
