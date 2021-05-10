@@ -8,7 +8,8 @@ interface Props {
 }
 
 const CSS_HANDLES = [
-  'addressContainer'
+  'addressContainer',
+  'locationName'
 ] as const
 
 const Address: FunctionComponent<Props> = ({ address, pickup }) => {
@@ -17,7 +18,7 @@ const Address: FunctionComponent<Props> = ({ address, pickup }) => {
   return (
     <div className={`${handles.addressContainer} c-muted-1 lh-copy`} data-testid="address-component">
       {pickup && (
-        <p className="c-on-base lh-copy">{pickup.pickupFriendlyName}</p>
+        <p className={`${handles.locationName} c-on-base lh-copy`}>{pickup.pickupFriendlyName}</p>
       )}
       <AddressRules country={address.country} shouldUseIOFetching>
         <AddressSummary address={address} />
