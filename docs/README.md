@@ -316,6 +316,7 @@ In order to apply CSS customizations in this and other blocks, follow the instru
 | `paymentGroup`   |
 | `paymentValue`   |
 | `addressContainer`   |
+| `pickupFriendlyName`   |
 | `updateOrderButton` |
 | `myOrdersButton` |
 | `cancelOrderButton` |
