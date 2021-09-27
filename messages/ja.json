@@ -20,7 +20,7 @@
   "store/order.split.no.pickup.n.takeaway": "注文を {deliveries} 回の配送に分割します。それぞれ、 {takeaways, plural, one {1 つのテイクアウェイ製品} other {# 個のテイクアウェイ製品}}となります。このようにして、近くにある項目を早く受け取ることができます。",
   "store/order.split.no.pickup.no.takeaway": "注文を {deliveries} 回の配送に分割します。このようにして、近くにある項目を早く受け取ることができます。",
   "store/order.totals.delivery": "配送",
-  "store/order.totals.pickup": "ピックアップする",
+  "store/order.totals.pickup": "ピックアップ",
   "store/order.totals.pickup.free": "無料",
   "store/order.totals.subtotal": "小計 ({numItems, plural, one {# 個の項目} other {# 個の項目}})",
   "store/order.totals.total": "合計",
@@ -32,7 +32,7 @@
   "store/payments.id": "支払い ID: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "取引 ID: {id}",
-  "store/pickup.header.title": "ピックアップする",
+  "store/pickup.header.title": "ピックアップ",
   "store/products.quantity": "{quantity, plural, one {# ユニティ} other {# ユニティ}}",
   "store/shipping.header.title": "配送",
   "store/shipping.header.wishlist.address": "住所登録: {giftRegistryName}"

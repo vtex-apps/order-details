@@ -1,6 +1,6 @@
 {
   "store/common.header.counter": "여러 배송 및/또는 픽업 카운터",
-  "store/items.attachments.subscription": "가입",
+  "store/items.attachments.subscription": "구독",
   "store/items.attachments.subscription.frequency.day": "{frequencyNumber, plural, one {# 일} other {# 일}}마다",
   "store/items.attachments.subscription.frequency.month": "{frequencyNumber, plural, one {#월} other {#월}}마다",
   "store/items.attachments.subscription.frequency.week": "{frequencyNumber, plural, one {# 주} other {# 주}}마다",
