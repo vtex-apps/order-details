@@ -27,6 +27,7 @@ interface Props {
   className?: string
   fullWidth?: boolean
   orderId?: string
+  myAccountPath?: string
 }
 
 const CSS_HANDLES = [
@@ -42,13 +43,16 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
   className = '',
   fullWidth,
   orderId,
+  myAccountPath = '/account',
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
 
   return (
     <div className={`${className} flex flex-wrap justify-center flex-nowrap-m`}>
       <div
-        className={`${handles.updateOrderButton} mr5-ns mb5-s mb0-m w-100 w-auto-m`}>
+        className={`${
+          handles.updateOrderButton
+        } mr5-ns mb5-s mb0-m w-100 w-auto-m`}>
         {takeaway ? (
           <ButtonLink variation="secondary" fullWidth={fullWidth} to="">
             {intl.formatMessage(messages.printReceiptButton)}
@@ -57,18 +61,20 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
           <ButtonLink
             variation="secondary"
             fullWidth={fullWidth}
-            to={`/account#/orders/${orderId}/edit`}>
+            to={`${myAccountPath}#/orders/${orderId}/edit`}>
             {intl.formatMessage(messages.updateButton)}
           </ButtonLink>
         )}
       </div>
       {!takeaway && (
         <div
-          className={`${handles.myOrdersButton} mr5-ns mb5-s mb0-m w-100 w-auto-m`}>
+          className={`${
+            handles.myOrdersButton
+          } mr5-ns mb5-s mb0-m w-100 w-auto-m`}>
           <ButtonLink
             variation="secondary"
             fullWidth={fullWidth}
-            to="/account#/orders/">
+            to={`${myAccountPath}#/orders/`}>
             {intl.formatMessage(messages.myOrdersButton)}
           </ButtonLink>
         </div>
@@ -83,7 +89,7 @@ const OrderOptions: FunctionComponent<Props & InjectedIntlProps> = ({
             <ButtonLink
               variation="danger-tertiary"
               fullWidth={fullWidth}
-              to={`/account#/orders/${orderId}/cancel`}>
+              to={`${myAccountPath}#/orders/${orderId}/cancel`}>
               {intl.formatMessage(messages.cancelButton)}
             </ButtonLink>
           )}
