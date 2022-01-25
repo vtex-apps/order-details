@@ -151,6 +151,7 @@ interface Props {
   className?: string;
   fullWidth?: boolean;
   orderId?: string;
+  myAccountPath?: string;
 }
 ```
 
