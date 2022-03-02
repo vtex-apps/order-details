@@ -1,10 +1,10 @@
 {
-  "vendor": "vtex",
+  "vendor": "thefoschini",
   "name": "order-details",
   "version": "1.8.0",
   "title": "Order Details Components",
   "description": "Components to display information on an order",
-  "defaultLocale": "pt-BR",
+  "defaultLocale": "en-ZA",
   "builders": {
     "react": "3.x",
     "messages": "1.x",
