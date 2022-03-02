@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Husky conventional commit
+
 ## [1.8.0] - 2022-01-31
 
 ### Added
