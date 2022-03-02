@@ -2,7 +2,9 @@
   "version": "1.0.0",
   "devDependencies": {
     "@vtex/intl-equalizer": "^2.3.0",
-    "husky": "^2.4.1"
+    "husky": "^2.4.1",
+    "@commitlint/cli": "^16.0.2",
+    "@commitlint/config-conventional": "^16.0.0"
   },
   "scripts": {
     "lint": "cd ./react && yarn lint",
@@ -14,7 +16,8 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint:locales && yarn locales:fix",
-      "pre-push": "yarn verify"
+      "pre-push": "yarn verify",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "intl-equalizer": {
