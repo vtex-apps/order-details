@@ -31,6 +31,7 @@ const CSS_HANDLES = [
   'paymentItemWrapper',
   'paymentGroup',
   'paymentValue',
+  'paymentLastDigits',
   'paymentIcon',
   'paymentTooltip'
 ] as const
@@ -68,16 +69,16 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
     <article className="flex justify-between">
       <div className="t-body lh-solid">
         <div className={`${handles.paymentItemWrapper} flex items-center`}>
-          <p className={`${handles.paymentGroup} c-on-base`}>
+          <span className={`${handles.paymentGroup} c-on-base`}>
             {paymentGroupSwitch(payment, intl)}
-          </p>
-          {hasLastDigits && (
-            <p className="c-muted-1 mb3">
-              {intl.formatMessage(messages.lastDigits, {
-                lastDigits: payment.lastDigits,
-              })}
-            </p>
-          )}
+            {hasLastDigits && (
+              <span className={`${handles.paymentLastDigits} c-muted-1 mb3`}>
+                ({intl.formatMessage(messages.lastDigits, {
+                  lastDigits: payment.lastDigits,
+                })})
+              </span>
+            )}
+          </span>
           <p className={`${handles.paymentValue} c-muted-1 mv0`}>
             <Price value={payment.value} currency={currency} />
             {` ${intl.formatMessage(messages.installments, {
