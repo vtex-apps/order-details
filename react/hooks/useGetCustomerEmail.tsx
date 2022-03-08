@@ -15,7 +15,6 @@ export const useGetCustomerEmail = (email: string) => {
       .catch((error) => console.log(error))
       .then((data) => {
         const [customer] = data;
-        console.log(customer)
         setCustomerEmail(customer?.customerEmail || null);
       });
   }, []);
