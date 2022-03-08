@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { InjectedIntlProps, injectIntl } from 'react-intl'
 import { ProfileRules, ProfileSummary } from 'vtex.profile-form'
 import { useCssHandles } from 'vtex.css-handles'
+import { useGetCustomerEmail } from './hooks/useGetCustomerEmail'
 
 const CSS_HANDLES = [
   'customerInfoListContainer',
@@ -20,6 +21,7 @@ const CustomerInfo: FunctionComponent<Props & InjectedIntlProps> = ({
   intl,
 }) => {
   const handles = useCssHandles(CSS_HANDLES)
+  const customerEmail = useGetCustomerEmail(profile.email)
   return (
     <div className="flex flex-column c-on-base">
       <ProfileRules country={intl.locale} shouldUseIOFetching>
@@ -27,18 +29,16 @@ const CustomerInfo: FunctionComponent<Props & InjectedIntlProps> = ({
           {({ personalData }: any) => (
             <ul className={`${handles.customerInfoListContainer} list pl0`}>
               <li className={`${handles.customerInfoListName} pv2`}>
-                {`${personalData.firstName.value} ${
-                  personalData.lastName.value
-                }`}
+                {`${personalData.firstName.value} ${personalData.lastName.value
+                  }`}
               </li>
-              <li className={`${handles.customerInfoListEmail} pv2 c-muted-2`}>
-                {personalData.email.value}
-              </li>
+              {customerEmail && <li className={`${handles.customerInfoListEmail} pv2 c-muted-2`}>
+                {customerEmail}
+              </li>}
               {personalData.document && (
                 <li
-                  className={`${
-                    handles.customerInfoListDocument
-                  } pv2 c-muted-2`}>
+                  className={`${handles.customerInfoListDocument
+                    } pv2 c-muted-2`}>
                   {personalData.document.value}
                 </li>
               )}
