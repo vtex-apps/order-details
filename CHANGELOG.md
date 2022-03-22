@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Husky conventional commit
+- use `customerEmail` prop comming from `order-placed` app
 
 ## [1.8.0] - 2022-01-31
 
