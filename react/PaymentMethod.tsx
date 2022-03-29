@@ -28,8 +28,12 @@ interface Props {
 }
 
 const CSS_HANDLES = [
+  'paymentItemWrapper',
   'paymentGroup',
-  'paymentValue'
+  'paymentValue',
+  'paymentLastDigits',
+  'paymentIcon',
+  'paymentTooltip'
 ] as const
 
 const paymentGroupSwitch = (payment: Payment, intl: ReactIntl.InjectedIntl) => {
@@ -64,17 +68,17 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
   return (
     <article className="flex justify-between">
       <div className="t-body lh-solid">
-        <p className={`${handles.paymentGroup} c-on-base`}>
-          {paymentGroupSwitch(payment, intl)}
-        </p>
-        {hasLastDigits && (
-          <p className="c-muted-1 mb3">
-            {intl.formatMessage(messages.lastDigits, {
-              lastDigits: payment.lastDigits,
-            })}
-          </p>
-        )}
-        <div className="flex items-center">
+        <div className={`${handles.paymentItemWrapper} flex items-center`}>
+          <span className={`${handles.paymentGroup} c-on-base`}>
+            {paymentGroupSwitch(payment, intl)}
+            {hasLastDigits && (
+              <span className={`${handles.paymentLastDigits} c-muted-1 mb3`}>
+                ({intl.formatMessage(messages.lastDigits, {
+                  lastDigits: payment.lastDigits,
+                })})
+              </span>
+            )}
+          </span>
           <p className={`${handles.paymentValue} c-muted-1 mv0`}>
             <Price value={payment.value} currency={currency} />
             {` ${intl.formatMessage(messages.installments, {
@@ -82,18 +86,18 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
             })}`}
           </p>
           <div
-            className="ml4"
+            className={`${handles.paymentIcon} ml4`}
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}>
             <InfoIcon colorToken="c-muted-3" />
+            <div hidden={!isOpen} className={`${handles.paymentTooltip} mt2 z-2 absolute`}>
+              <AdditionalInfo
+                paymentId={payment.id}
+                transactionId={transactionId}
+                showTooltip={true}
+              />
+            </div>
           </div>
-        </div>
-        <div hidden={!isOpen} className="mt2 z-2 absolute">
-          <AdditionalInfo
-            paymentId={payment.id}
-            transactionId={transactionId}
-            showTooltip={true}
-          />
         </div>
         {isBankInvoice && payment.url && (
           <div className="mt5">
