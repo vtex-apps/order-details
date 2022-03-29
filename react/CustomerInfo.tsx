@@ -27,18 +27,16 @@ const CustomerInfo: FunctionComponent<Props & InjectedIntlProps> = ({
           {({ personalData }: any) => (
             <ul className={`${handles.customerInfoListContainer} list pl0`}>
               <li className={`${handles.customerInfoListName} pv2`}>
-                {`${personalData.firstName.value} ${
-                  personalData.lastName.value
-                }`}
+                {`${personalData.firstName.value} ${personalData.lastName.value
+                  }`}
               </li>
-              <li className={`${handles.customerInfoListEmail} pv2 c-muted-2`}>
-                {personalData.email.value}
-              </li>
+              {profile.customerEmail && <li className={`${handles.customerInfoListEmail} pv2 c-muted-2`}>
+                {profile.customerEmail}
+              </li>}
               {personalData.document && (
                 <li
-                  className={`${
-                    handles.customerInfoListDocument
-                  } pv2 c-muted-2`}>
+                  className={`${handles.customerInfoListDocument
+                    } pv2 c-muted-2`}>
                   {personalData.document.value}
                 </li>
               )}
