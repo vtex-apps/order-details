@@ -29,6 +29,7 @@
   "store/payments.creditcard.lastDigits": "마지막 자릿수: {lastDigits}",
   "store/payments.debitcard": "데빗 카드",
   "store/payments.giftCard": "기프트 카드",
+  "store/payments.ozowEFT": "OzowEFT",
   "store/payments.id": "결제 ID: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "거래 ID: {id}",

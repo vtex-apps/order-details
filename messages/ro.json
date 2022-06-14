@@ -29,6 +29,7 @@
   "store/payments.creditcard.lastDigits": "Ultimele caractere: {lastDigits}",
   "store/payments.debitcard": "Card debit",
   "store/payments.giftCard": "Card cadou",
+  "store/payments.ozowEFT": "OzowEFT",
   "store/payments.id": "ID plată: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "ID tranzacție: {id}",
