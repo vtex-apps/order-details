@@ -29,6 +29,7 @@
   "store/payments.creditcard.lastDigits": "Ultime cifre: {lastDigits}",
   "store/payments.debitcard": "Carta di debito",
   "store/payments.giftCard": "Buono regalo",
+  "store/payments.ozowEFT": "OzowEFT",
   "store/payments.id": "ID pagamento: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "ID transazione: {id}",

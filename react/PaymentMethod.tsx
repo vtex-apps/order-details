@@ -19,6 +19,7 @@ const messages = defineMessages({
   giftCard: { id: 'store/payments.giftCard', defaultMessage: '' },
   installments: { id: 'store/payments.installments', defaultMessage: '' },
   print: { id: 'store/payments.bankinvoice.print', defaultMessage: '' },
+  ozowEFT: { id: 'store/payments.ozowEFT', defaultMessage: '' },
 })
 
 interface Props {
@@ -48,6 +49,8 @@ const paymentGroupSwitch = (payment: Payment, intl: ReactIntl.InjectedIntl) => {
       return intl.formatMessage(messages.debitcard)
     case 'giftCard':
       return intl.formatMessage(messages.giftCard)
+    case 'OsowEFT':
+      return intl.formatMessage(messages.ozowEFT)
     default:
       return payment.paymentSystemName
   }

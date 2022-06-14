@@ -29,6 +29,7 @@
   "store/payments.creditcard.lastDigits": "Final {lastDigits}",
   "store/payments.debitcard": "Cartão de débito",
   "store/payments.giftCard": "Vale presente",
+  "store/payments.ozowEFT": "OzowEFT",
   "store/payments.id": "ID do pagamento: {id}",
   "store/payments.installments": "{installments, plural, one {à vista} other { (#x)}}",
   "store/payments.transaction.id": "ID da transação: {id}",
