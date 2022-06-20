@@ -14,6 +14,10 @@ In order to use the components exported by OrderDetails, you must include in you
 },
 ```
 
+## App customized to TFG
+### Features added
+- release 1.9.0 ([019e56c](https://github.com/TFG-Labs/order-details/commit/019e56cd476c7b37bc40f23d6ddec07a90449b7d))
+
 ## Exported components
 
 ### Address
