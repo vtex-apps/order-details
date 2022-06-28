@@ -29,7 +29,7 @@
   "store/payments.creditcard.lastDigits": "آخر الأرقام: {lastDigits}",
   "store/payments.debitcard": "بطاقة الخصم",
   "store/payments.giftCard": "بطاقة هدايا",
-  "store/payments.ozowEFT": "أوزوف",
+  "store/payments.ozowEFT": "التحويل الإلكتروني الفوري",
   "store/payments.id": "معرّف الدفع: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "معرّف المعاملة: {id}",
