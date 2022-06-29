@@ -29,7 +29,7 @@
   "store/payments.creditcard.lastDigits": "Utolsó számjegyek: {lastDigits}",
   "store/payments.debitcard": "Betéti kártya",
   "store/payments.giftCard": "Ajándékkártya",
-  "store/payments.ozowEFT": "OzowEFT",
+  "store/payments.ozowEFT": "Instant EFT",
   "store/payments.id": "Fizetési azonosító: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "Tranzakcióazonosító: {id}",

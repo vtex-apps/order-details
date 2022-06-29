@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- `OzowEFT` text payment method changed to `Instant EFT`
 
 ## [1.9.3] - 2022-06-17
 ### Changed
@@ -13,16 +15,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.9.2] - 2022-05-31
 
-### Added 
+### Added
 - updated text at order confirmation page
 ## [1.9.1] - 2022-05-28
 
-### Added 
+### Added
 - update link of tfg-order of my account of the order-confirmation page
 
 ## [1.9.0] - 2022-03-29
 
-### Added 
+### Added
 
 - Husky conventional commit
 - use `customerEmail` prop comming from `order-placed` app

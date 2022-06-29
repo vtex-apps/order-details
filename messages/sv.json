@@ -29,7 +29,7 @@
   "store/payments.creditcard.lastDigits": "Sista siffrorna: {lastDigits}",
   "store/payments.debitcard": "Kreditkort",
   "store/payments.giftCard": "Presentkort",
-  "store/payments.ozowEFT": "OzowEFT",
+  "store/payments.ozowEFT": "Instant EFT",
   "store/payments.id": "Betalnings ID: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "Transaktions ID: {id}",

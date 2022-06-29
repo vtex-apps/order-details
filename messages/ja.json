@@ -29,7 +29,7 @@
   "store/payments.creditcard.lastDigits": "最後の桁: {lastDigits}",
   "store/payments.debitcard": "デビットカード",
   "store/payments.giftCard": "ギフトカード",
-  "store/payments.ozowEFT": "OzowEFT",
+  "store/payments.ozowEFT": "Instant EFT",
   "store/payments.id": "支払い ID: {id}",
   "store/payments.installments": "({installments}x)",
   "store/payments.transaction.id": "取引 ID: {id}",
