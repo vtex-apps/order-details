@@ -11,6 +11,7 @@ import { useCssHandles } from 'vtex.css-handles'
 
 const messages = defineMessages({
   creditcard: { id: 'store/payments.creditcard', defaultMessage: '' },
+  promissory: { id: 'store/payments.promissory', defaultMessage: '' },
   debitcard: { id: 'store/payments.debitcard', defaultMessage: '' },
   lastDigits: {
     id: 'store/payments.creditcard.lastDigits',
@@ -39,7 +40,7 @@ const paymentGroupSwitch = (payment: Payment, intl: ReactIntl.InjectedIntl) => {
     case 'bankInvoice':
       return payment.paymentSystemName
     case 'promissory':
-      return payment.paymentSystemName
+      return intl.formatMessage(messages.promissory)
     case 'debitCard':
       return intl.formatMessage(messages.debitcard)
     case 'giftCard':

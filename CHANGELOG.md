@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- Indonesian translation.
+
+### Fixed
+- Message for promissory note and English and Romanian translations.
+
 ## [1.8.0] - 2022-01-31
 
 ### Added
