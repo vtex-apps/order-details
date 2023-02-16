@@ -30,7 +30,8 @@ interface Props {
 
 const CSS_HANDLES = [
   'paymentGroup',
-  'paymentValue'
+  'paymentValue',
+  'paymentInstallments'
 ] as const
 
 const paymentGroupSwitch = (payment: Payment, intl: ReactIntl.InjectedIntl) => {
@@ -78,9 +79,9 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
         <div className="flex items-center">
           <p className={`${handles.paymentValue} c-muted-1 mv0`}>
             <Price value={payment.value} currency={currency} />
-            {` ${intl.formatMessage(messages.installments, {
+            <span className={`${handles.paymentInstallments}`}>{` ${intl.formatMessage(messages.installments, {
               installments: payment.installments,
-            })}`}
+            })}`}</span>
           </p>
           <div
             className="ml4"
