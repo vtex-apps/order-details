@@ -234,6 +234,7 @@ interface Payment {
   id: string;
   paymentSystem: string;
   paymentSystemName: string;
+  paymentOrigin: string | null;
   value: number;
   lastDigits: string | null;
   group: string;
