@@ -59,6 +59,8 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
 }) => {
   const { rootPath } = useRuntime()
   const [isOpen, setIsOpen] = useState(false)
+  const hasPaymentSystemName = payment.paymentSystemName
+  const hasPaymentOrigin = !!payment.paymentOrigin
   const hasLastDigits = !!payment.lastDigits
   const isBankInvoice = payment.group === 'bankInvoice'
   const handles = useCssHandles(CSS_HANDLES)
@@ -69,8 +71,16 @@ const PaymentMethod: FunctionComponent<Props & InjectedIntlProps> = ({
         <p className={`${handles.paymentGroup} c-on-base`}>
           {paymentGroupSwitch(payment, intl)}
         </p>
-        {hasLastDigits && (
+        {hasPaymentSystemName && (
           <p className="c-muted-1 mb3">
+            {payment.paymentSystemName}
+            {hasPaymentOrigin && (
+              <span>&nbsp;({payment.paymentOrigin})</span>
+            )}
+          </p>
+        )}
+        {hasLastDigits && (
+          <p className="c-muted-1 mt0 mb3">
             {intl.formatMessage(messages.lastDigits, {
               lastDigits: payment.lastDigits,
             })}
