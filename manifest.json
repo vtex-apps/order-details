@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "order-details",
-  "version": "1.9.1",
+  "version": "1.10.0",
   "title": "Order Details Components",
   "description": "Components to display information on an order",
   "defaultLocale": "pt-BR",

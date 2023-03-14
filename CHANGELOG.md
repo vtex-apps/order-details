@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.10.0] - 2023-03-14
+
 ### Added
 - Payment system name and payment origin on payment summary when paid with creditCard
 
