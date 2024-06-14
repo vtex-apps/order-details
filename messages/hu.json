@@ -26,6 +26,7 @@
   "store/order.totals.total": "Összesen",
   "store/payments.bankinvoice.print": "{paymentSystemName} megnyitása",
   "store/payments.creditcard": "Hitelkártya",
+  "store/payments.promissory": "Fizetési jegyzet",
   "store/payments.creditcard.lastDigits": "Utolsó számjegyek: {lastDigits}",
   "store/payments.debitcard": "Betéti kártya",
   "store/payments.giftCard": "Ajándékkártya",
