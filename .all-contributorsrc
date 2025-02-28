@@ -3,7 +3,7 @@
   "projectOwner": "vtex-apps",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": [
+  "files": [ 
     "docs/README.md"
   ],
   "imageSize": 100,
