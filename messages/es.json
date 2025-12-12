@@ -15,10 +15,10 @@
   "store/order.header.takeaway.cancel.button": "Cancelar compra",
   "store/order.header.takeaway.printreceipt.button": "Reimprimir recibo",
   "store/order.header.update.button": "Actualizar pedido",
-  "store/order.split.n.pickup.n.takeaway": "Dividimos tu pedido en {deliveries} envíos{pickups, plural, one {, # recogida en tienda} other {, # recogidas en tienda}}{takeaways, plural, one { y # producto para llevar ahora} other { y # productos para llevar ahora}}. Así recibirás los ítems que están más cerca de ti más rápido.",
-  "store/order.split.n.pickup.no.takeaway": "Dividimos tu pedido en {deliveries} envíos{pickups, plural, one { y # recogida en tienda} other { y # recogidas en tienda}}. Así recibirás los ítems que están más cerca de ti más rápido.",
-  "store/order.split.no.pickup.n.takeaway": "Dividimos tu pedido en {deliveries} envíos{takeaways, plural, one { y # producto para llevar ahora} other { y # productos para llevar ahora}}. Así recibirás los ítems que están más cerca de ti más rápido.",
-  "store/order.split.no.pickup.no.takeaway": "Dividimos tu pedido en {deliveries} envíos. Así recibirás los ítems que están más cerca de ti más rápido.",
+  "store/order.split.n.pickup.n.takeaway": "Dividimos tu pedido en {deliveries} envíos{pickups, plural, one {, 1 recogida en tienda} other {, # recogidas en tienda}}{takeaways, plural, one { y 1 producto para llevar ahora} other { y # productos para llevar ahora}}. Así recibirás más rápido los ítems que están más cerca de ti.",
+  "store/order.split.n.pickup.no.takeaway": "Dividimos tu pedido en {deliveries} envíos{pickups, plural, one { y 1 recogida en tienda} other { y # recogidas en tienda}}. Así recibirás más rápido los ítems que están más cerca de ti.",
+  "store/order.split.no.pickup.n.takeaway": "Dividimos tu pedido en {deliveries} envíos{takeaways, plural, one { y 1 producto para llevar ahora} other { y # productos para llevar ahora}}. Así recibirás más rápido los ítems que están más cerca de ti.",
+  "store/order.split.no.pickup.no.takeaway": "Dividimos tu pedido en {deliveries} envíos. Así recibirás más rápido los ítems que están más cerca de ti.",
   "store/order.totals.delivery": "Envío",
   "store/order.totals.pickup": "Recogida",
   "store/order.totals.pickup.free": "Gratis",
@@ -31,10 +31,10 @@
   "store/payments.debitcard": "Tarjeta de débito",
   "store/payments.giftCard": "Tarjeta de regalo",
   "store/payments.id": "ID de pago: {id}",
-  "store/payments.installments": "(paga en {installments})",
+  "store/payments.installments": "({installments} cuotas)",
   "store/payments.transaction.id": "ID de transacción: {id}",
   "store/pickup.header.title": "Recogida",
-  "store/products.quantity": "{quantity, plural, one {# unidad} other {# unidades}}",
+  "store/products.quantity": "{quantity, plural, one {#} other {#}}",
   "store/shipping.header.title": "Envío",
-  "store/shipping.header.wishlist.address": "Dirección de: {giftRegistryName}"
+  "store/shipping.header.wishlist.address": "Dirección asociada: {giftRegistryName}"
 }
