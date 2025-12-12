@@ -34,7 +34,7 @@
   "store/payments.installments": "({installments} دفعات)",
   "store/payments.transaction.id": "معرّف المعاملة: {id}",
   "store/pickup.header.title": "الإستلام",
-  "store/products.quantity": "{quantity, plural, zero {#} one {#} two {#} few {#} many {#} other {#}}",
+  "store/products.quantity": "{quantity, plural, zero {# وحدات} one {# وحدة} two {# وحدتان} few {# وحدات} many {# وحدة} other {# وحدة}}",
   "store/shipping.header.title": "التسليم",
   "store/shipping.header.wishlist.address": "العنوان من: {giftRegistryName}"
 }
